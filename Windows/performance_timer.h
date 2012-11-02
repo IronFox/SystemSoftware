@@ -5,12 +5,12 @@
 
 namespace timer
 {
-	typedef LARGE_INTEGER	time_t;
+	typedef unsigned long long	time_t;
 	
 	time_t	now()
 	{
 		time_t result;
-		VERIFY(QueryPerformanceCounter(&result));
+		QueryPerformanceCounter((LARGE_INTEGER*)&result);
 		return result;
 	}
 	
@@ -18,7 +18,7 @@ namespace timer
 	{
 		static time_t frequency = 0;
 		if (!frequency)
-			VERIFY(QueryPerformanceFrequency(&frequency));
+			QueryPerformanceFrequency((LARGE_INTEGER*)&frequency);
 		return frequency;
 	}
 	
