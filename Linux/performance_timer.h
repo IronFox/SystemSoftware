@@ -3,6 +3,8 @@
 
 #include <time.h>
 
+/* link with librt.a (add -lrt to your link line) */
+
 namespace timer
 {
 	typedef unsigned long long	time_t;
