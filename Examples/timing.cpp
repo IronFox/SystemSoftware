@@ -1,4 +1,4 @@
-#include <iostream>	//allow access to std::cout (also std::endl)
+#include <iostream>	//gain access to std::cout (also std::endl)
 
 //include our timer header
 #ifdef _WIN32

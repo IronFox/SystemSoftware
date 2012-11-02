@@ -1,5 +1,5 @@
-#include <iostream>	//allow access to std::cout (also std::endl)
-#include <stdlib.h>	//allow access to atoi (for string conversion)
+#include <iostream>	//gain access to std::cout (also std::endl)
+#include <stdlib.h>	//gain access to atoi (for string conversion)
 
 //include our timer header
 #ifdef _WIN32
