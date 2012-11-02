@@ -23,13 +23,13 @@ int main(int argc, char* argv[])
 {
 	int num_iterations = 100000000;
 	std::cout << "starting loop over " << num_iterations << " iterations" << std::endl;
-	volatile int dummy; //prevent optimization
-	timer::time_t t0 = timer::now();
+	volatile int dummy; //prevent optimization from removing the loop (since it does nothing)
+	timer::time_t t0 = timer::now();	//measure time before our operation
 	for (int i = 0; i < num_iterations; i++)
 	{
 		dummy = i;
 	}
-	float seconds = timer::toSecondsf(timer::now() - t0);
+	float seconds = timer::toSecondsf(timer::now() - t0);	//measure time after our operation and convert it into seconds
 	std::cout << "execution took "<<seconds<<" seconds to complete.\nprogram will exit now"<<std::endl;
-	return 0;
+	return 0;	//signal that the program has completet correctly
 }
