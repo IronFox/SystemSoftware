@@ -1,5 +1,5 @@
 #include <iostream>	//allow access to std::cout (also std::endl)
-#include <stdlib.h>
+#include <stdlib.h>	//allow access to atoi (for string conversion)
 
 //include our timer header
 #ifdef _WIN32
@@ -36,5 +36,5 @@ int main(int argc, char* argv[])
 	your program here
 	
 	
-	return 0;	//signal that the program has completet correctly
+	return 0;	//signal that the program has completed correctly
 }
