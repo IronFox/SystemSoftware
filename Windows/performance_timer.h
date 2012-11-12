@@ -6,15 +6,15 @@
 namespace timer
 {
 	typedef unsigned long long	time_t;
-	
-	time_t	now()
+
+	inline time_t	now()
 	{
 		time_t result;
 		QueryPerformanceCounter((LARGE_INTEGER*)&result);
 		return result;
 	}
 	
-	time_t	getFrequency()
+	inline time_t	getFrequency()
 	{
 		static time_t frequency = 0;
 		if (!frequency)
@@ -22,12 +22,12 @@ namespace timer
 		return frequency;
 	}
 	
-	double	toSecondsd(time_t t)
+	inline double	toSecondsd(time_t t)
 	{
 		return double(t) / double(getFrequency());
 	}
 
-	float	toSecondsf(time_t t)
+	inline float	toSecondsf(time_t t)
 	{
 		return float(t) / float(getFrequency());
 	}
