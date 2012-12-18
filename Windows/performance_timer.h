@@ -5,29 +5,29 @@
 
 namespace timer
 {
-	typedef LARGE_INTEGER	time_t;
-	
-	time_t	now()
+	typedef unsigned long long	time_t;
+
+	inline time_t	now()
 	{
 		time_t result;
-		VERIFY(QueryPerformanceCounter(&result));
+		QueryPerformanceCounter((LARGE_INTEGER*)&result);
 		return result;
 	}
 	
-	time_t	getFrequency()
+	inline time_t	getFrequency()
 	{
 		static time_t frequency = 0;
 		if (!frequency)
-			VERIFY(QueryPerformanceFrequency(&frequency));
+			QueryPerformanceFrequency((LARGE_INTEGER*)&frequency);
 		return frequency;
 	}
 	
-	double	toSecondsd(time_t t)
+	inline double	toSecondsd(time_t t)
 	{
 		return double(t) / double(getFrequency());
 	}
 
-	float	toSecondsf(time_t t)
+	inline float	toSecondsf(time_t t)
 	{
 		return float(t) / float(getFrequency());
 	}

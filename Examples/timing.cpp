@@ -1,4 +1,4 @@
-#include <iostream>	//allow access to std::cout (also std::endl)
+#include <iostream>	//gain access to std::cout (also std::endl)
 
 //include our timer header
 #ifdef _WIN32
@@ -31,5 +31,5 @@ int main(int argc, char* argv[])
 	}
 	float seconds = timer::toSecondsf(timer::now() - t0);	//measure time after our operation and convert it into seconds
 	std::cout << "execution took "<<seconds<<" seconds to complete.\nprogram will exit now"<<std::endl;
-	return 0;	//signal that the program has completet correctly
+	return 0;	//signal that the program has completed correctly
 }
